@@ -1,6 +1,11 @@
-### Increase flextime
-![plus](https://user-images.githubusercontent.com/1917608/62959690-9a047300-bdf9-11e9-87e7-593041fe0930.png)
+The flextime is increesed or decreesed in steps of 15 min by turning the crown on the watch clockwise or counterclockwise.
+
+Positive time is shown in green and negative in red.
 
 
-### Decrease flextime
-![minus](https://user-images.githubusercontent.com/1917608/62959705-9ffa5400-bdf9-11e9-9933-e821f5065aca.png)
+### Postive flextime
+![positive-time](https://user-images.githubusercontent.com/1917608/210641741-f2d54aba-2ca6-4dbe-94cc-7f6628706f65.png)
+
+
+### Negative flextime
+![negative-time](https://user-images.githubusercontent.com/1917608/210641819-b71ce4e3-feda-4ea9-af90-13f9bffb6056.png)
