@@ -1,6 +1,5 @@
 package se.yverling.flextracker
 
-import android.util.Log
 import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -36,7 +35,7 @@ import se.yverling.flextracker.design.theme.NormalSpace
 import kotlin.math.abs
 
 private const val TIME_CHANGE_STEP_IN_MINUTES = 15
-private const val TIME_CHANGE_DELAY_IN_NANO_SECONDS = 100 * 1_000_000
+private const val EVENTS_THRESHOLD = 8
 
 @Composable
 fun MainScreen(viewModel: MainViewModel = hiltViewModel()) {
@@ -67,24 +66,28 @@ fun LoadingScreen(modifier: Modifier = Modifier) {
     }
 }
 
-@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun SuccessScreen(timeInMinutes: Int, onTimeChange: (Int) -> Unit) {
     // TODO Put a limit to value to be -99:45 - 99:45 to not overflow the string
     var currentTimeInMinutes by remember { mutableStateOf(timeInMinutes) }
     val focusRequester = remember { FocusRequester() }
-    var measuredTime = System.nanoTime()
+    var upEvents by remember { mutableStateOf(0) }
+    var downEvents by remember { mutableStateOf(0) }
 
     Column(
         modifier = Modifier
             .fillMaxSize()
             .onPreRotaryScrollEvent {
-                if (System.nanoTime() - measuredTime > TIME_CHANGE_DELAY_IN_NANO_SECONDS) {
-                    measuredTime = System.nanoTime()
+                if (isScrollingUp(it)) upEvents++ else downEvents++
 
-                    if (isScrollingUp(it)) currentTimeInMinutes += TIME_CHANGE_STEP_IN_MINUTES
-                    else currentTimeInMinutes -= TIME_CHANGE_STEP_IN_MINUTES
-
+                if (upEvents > EVENTS_THRESHOLD || downEvents > EVENTS_THRESHOLD) {
+                    if (isScrollingUp(it)) {
+                        currentTimeInMinutes += TIME_CHANGE_STEP_IN_MINUTES
+                        upEvents = 0
+                    } else {
+                        currentTimeInMinutes -= TIME_CHANGE_STEP_IN_MINUTES
+                        downEvents = 0
+                    }
                     onTimeChange(currentTimeInMinutes)
                 }
                 true
