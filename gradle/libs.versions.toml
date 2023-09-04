@@ -2,21 +2,21 @@
 
 kotlinOptionsJvmTarget = "17"
 
-android = "8.0.2"
+android = "8.1.1"
 
 # This needs to be synced with compose-kotlinCompiler
 # https://developer.android.com/jetpack/androidx/releases/compose-kotlin
-kotlin = "1.8.22"
+kotlin = "1.9.10"
 
 appCompat = "1.6.1"
 
-hilt = "2.46.1"
+hilt = "2.48"
 hilt-navigation-compose = "1.0.0"
 
-compose-kotlinCompiler = "1.4.8"
-compose-bom = "2023.06.01"
+compose-kotlinCompiler = "1.5.3"
+compose-bom = "2023.08.00"
 
-wear-compose = "1.1.2"
+wear-compose = "1.2.0"
 
 versions = "0.47.0"
 

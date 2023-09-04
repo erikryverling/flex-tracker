@@ -13,9 +13,9 @@ plugins {
 }
 
 buildscript {
-    extra.set("compileSdkVersion", 33)
+    extra.set("compileSdkVersion", 34)
     extra.set("minSdkVersion", 30)
-    extra.set("targetSdkVersion", 33)
+    extra.set("targetSdkVersion", 34)
 }
 
 tasks.withType<com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask> {
