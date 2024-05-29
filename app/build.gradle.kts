@@ -1,19 +1,20 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
-    kotlin("kapt")
-    id("dagger.hilt.android.plugin")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.kotlin)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "se.yverling.flextracker"
 
-    compileSdk = rootProject.extra.get("compileSdkVersion") as Int
+    compileSdk = Versions.compileSdk
 
     defaultConfig {
+        minSdk = Versions.minSdk
+
         applicationId = "se.yverling.flextracker"
-        minSdk = rootProject.extra.get("minSdkVersion") as Int
-        targetSdk = rootProject.extra.get("targetSdkVersion") as Int
         versionCode = 20000 // Version & release number
         versionName = "2.0.0"
     }
@@ -28,18 +29,14 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = libs.versions.kotlinOptionsJvmTarget.get()
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.compose.kotlinCompiler.get()
+        jvmTarget = Versions.jvmTarget
     }
 }
 
 dependencies {
     implementation(libs.appCompat)
 
-    kapt(libs.hilt.android.compiler)
+    ksp(libs.hilt.android.compiler)
     implementation(libs.bundles.hilt)
 
     implementation(platform(libs.compose.bom))
