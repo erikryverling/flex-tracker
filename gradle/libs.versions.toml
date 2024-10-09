@@ -7,14 +7,18 @@ hilt = "2.52"
 # Plugins
 kotlin-dsl-plugin = "4.5.0"
 android-plugin = "8.4.2"
-ksp-plugin = "2.0.20-1.0.24"
+ksp-plugin = "2.0.20-1.0.25"
 versions-plugin = "0.51.0"
 
 # Libraries
 appCompat = "1.7.0"
-compose-bom = "2024.08.00"
+
+compose-bom = "2024.09.03"
+compose-activity = "1.9.2"
+
+wear-compose = "1.4.0"
+
 hilt-navigation-compose = "1.2.0"
-wear-compose = "1.3.1"
 dataStore-preferences = "1.1.1"
 
 
@@ -36,9 +40,11 @@ hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", ve
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-navigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-navigation-compose" }
 
-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+# https://developer.android.com/develop/ui/compose/bom/bom-mapping
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
 compose-tooling = { module = "androidx.compose.ui:ui-tooling" }
-compose-activity = { module = "androidx.activity:activity-compose" }
+
+compose-activity = { module = "androidx.activity:activity-compose", version.ref = "compose-activity" }
 
 wear-compose-foundation = { module = "androidx.wear.compose:compose-foundation", version.ref = "wear-compose" }
 wear-compose-material = { module = "androidx.wear.compose:compose-material", version.ref = "wear-compose" }
