@@ -1,20 +1,19 @@
 [versions]
 
 # Global
-kotlin = "2.0.20"
+kotlin = "2.0.21"
 hilt = "2.52"
 
 # Plugins
-kotlin-dsl-plugin = "4.5.0"
+kotlin-dsl-plugin = "5.1.2"
 android-plugin = "8.4.2"
-ksp-plugin = "2.0.20-1.0.25"
-versions-plugin = "0.51.0"
+ksp-plugin = "2.0.21-1.0.28"
 
 # Libraries
 appCompat = "1.7.0"
 
-compose-bom = "2024.09.03"
-compose-activity = "1.9.2"
+compose-bom = "2024.11.00"
+compose-activity = "1.9.3"
 
 wear-compose = "1.4.0"
 
@@ -28,7 +27,6 @@ android-application = { id = "com.android.application", version.ref = "android-p
 android-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp-plugin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
-versions = { id = "com.github.ben-manes.versions", version.ref = "versions-plugin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 
