@@ -8,5 +8,4 @@ pluginManagement {
     }
 }
 
-
 include(":app")
