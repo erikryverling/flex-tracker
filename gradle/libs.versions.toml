@@ -1,24 +1,24 @@
 [versions]
 
 # Global
-kotlin = "2.1.20"
-hilt = "2.56.1"
+kotlin = "2.1.21"
+hilt = "2.56.2"
 
 # Plugins
 kotlin-dsl-plugin = "5.2.0"
-android-plugin = "8.9.1"
-ksp-plugin = "2.1.20-1.0.32"
+android-plugin = "8.9.3"
+ksp-plugin = "2.1.21-2.0.1"
 
 # Libraries
 appCompat = "1.7.0"
 
-compose-bom = "2025.03.01"
+compose-bom = "2025.05.01"
 compose-activity = "1.10.1"
 
 wear-compose = "1.4.1"
 
 hilt-navigation-compose = "1.2.0"
-dataStore-preferences = "1.1.4"
+dataStore-preferences = "1.1.7"
 
 
 [plugins]

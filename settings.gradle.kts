@@ -1,7 +1,4 @@
-rootProject.name = "Flex Tracker"
-rootProject.buildFileName = "build.gradle.kts"
-
-include(":app")
+rootProject.name = "flex-tracker"
 
 pluginManagement {
     repositories {
@@ -10,3 +7,6 @@ pluginManagement {
         mavenCentral()
     }
 }
+
+
+include(":app")
