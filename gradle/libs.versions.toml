@@ -5,21 +5,20 @@ kotlin = "2.1.21"
 hilt = "2.56.2"
 
 # Plugins
-kotlin-dsl-plugin = "5.2.0"
+kotlin-dsl-plugin = "6.1.2"
 android-plugin = "8.9.3"
 ksp-plugin = "2.1.21-2.0.1"
 
 # Libraries
-appCompat = "1.7.0"
+appCompat = "1.7.1"
 
-compose-bom = "2025.05.01"
+compose-bom = "2025.06.01"
 compose-activity = "1.10.1"
 
 wear-compose = "1.4.1"
 
 hilt-navigation-compose = "1.2.0"
 dataStore-preferences = "1.1.7"
-
 
 [plugins]
 kotlin-dsl = { id = "org.gradle.kotlin.kotlin-dsl", version.ref = "kotlin-dsl-plugin" }
@@ -28,7 +27,6 @@ android-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp-plugin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-
 
 [libraries]
 appCompat = { module = "androidx.appcompat:appcompat", version.ref = "appCompat" }
@@ -49,7 +47,14 @@ wear-compose-material = { module = "androidx.wear.compose:compose-material", ver
 
 dataStore-preferences = {module = "androidx.datastore:datastore-preferences", version.ref = "dataStore-preferences"}
 
-
 [bundles]
-hilt = ["hilt-android", "hilt-navigation"]
-compose = ["compose-tooling", "compose-activity", "wear-compose-foundation", "wear-compose-material"]
+hilt = [
+    "hilt-android",
+    "hilt-navigation"
+]
+compose = [
+    "compose-tooling",
+    "compose-activity",
+    "wear-compose-foundation",
+    "wear-compose-material"
+]
