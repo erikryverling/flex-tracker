@@ -2,9 +2,9 @@ rootProject.name = "flex-tracker"
 
 pluginManagement {
     repositories {
-        gradlePluginPortal()
         google()
         mavenCentral()
+        gradlePluginPortal()
     }
 }
 
