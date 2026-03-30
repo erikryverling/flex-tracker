@@ -25,6 +25,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.wear.compose.material.CircularProgressIndicator
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
@@ -40,7 +41,7 @@ private const val EVENTS_THRESHOLD = 8
 @Composable
 fun MainScreen(viewModel: MainViewModel = hiltViewModel()) {
     FlexTrackerTheme {
-        val uiState = viewModel.uiState.collectAsState()
+        val uiState = viewModel.uiState.collectAsStateWithLifecycle()
 
         when (uiState.value) {
             MainUiState.Loading -> LoadingScreen()
