@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.os.VibratorManager
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -25,7 +26,8 @@ class MainViewModel @Inject constructor(
     internal var uiState: StateFlow<MainUiState> = mutableUiState
 
     private val vibrator: Vibrator by lazy {
-        app.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        val vibratorManager = app.getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+        vibratorManager.defaultVibrator
     }
 
     fun read() {
@@ -52,6 +54,6 @@ class MainViewModel @Inject constructor(
 }
 
 sealed class MainUiState(val data: Any? = null) {
-    object Loading : MainUiState()
+    data object Loading : MainUiState()
     data class Success(val timeInMinutes: Int) : MainUiState(timeInMinutes)
 }

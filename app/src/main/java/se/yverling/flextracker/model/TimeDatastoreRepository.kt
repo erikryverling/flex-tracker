@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-class TimeDataStoreRepository @Inject constructor(@ApplicationContext private val context: Context) {
+class TimeDataStoreRepository @Inject constructor(@param:ApplicationContext private val context: Context) {
     private val timeInMinutesKey = intPreferencesKey("time_in_minutes")
 
     fun read(): Flow<Int> {

@@ -1,24 +1,26 @@
 [versions]
 
 # Common
-kotlin = "2.3.10"
-hilt = "2.59.1"
+kotlin = "2.3.20"
+hilt = "2.59.2"
 
 # Plugins
 kotlin-dsl-plugin = "6.5.2"
-android-plugin = "9.0.0"
-ksp-plugin = "2.3.5"
+android-plugin = "9.1.0"
+ksp-plugin = "2.3.6"
 
 # Libraries
 appCompat = "1.7.1"
 
-compose-bom = "2026.01.01"
-compose-activity = "1.12.3"
+compose-bom = "2026.03.01"
+compose-activity = "1.13.0"
 
-wear-compose = "1.5.6"
+wear-compose = "1.6.0"
+wear-tooling-preview = "1.0.0"
 
 hilt-navigation-compose = "1.3.0"
-dataStore-preferences = "1.2.0"
+hilt-viewmodel-compose = "1.3.0"
+dataStore-preferences = "1.2.1"
 
 [plugins]
 kotlin-dsl = { id = "org.gradle.kotlin.kotlin-dsl", version.ref = "kotlin-dsl-plugin" }
@@ -35,6 +37,7 @@ hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", ve
 
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-navigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-navigation-compose" }
+hilt-viewmodel-compose = { module = "androidx.hilt:hilt-lifecycle-viewmodel-compose", version.ref = "hilt-viewmodel-compose" }
 
 # https://developer.android.com/develop/ui/compose/bom/bom-mapping
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
@@ -44,17 +47,20 @@ compose-activity = { module = "androidx.activity:activity-compose", version.ref 
 
 wear-compose-foundation = { module = "androidx.wear.compose:compose-foundation", version.ref = "wear-compose" }
 wear-compose-material = { module = "androidx.wear.compose:compose-material", version.ref = "wear-compose" }
+wear-tooling-preview = { module = "androidx.wear:wear-tooling-preview", version.ref = "wear-tooling-preview" }
 
 dataStore-preferences = {module = "androidx.datastore:datastore-preferences", version.ref = "dataStore-preferences"}
 
 [bundles]
 hilt = [
     "hilt-android",
-    "hilt-navigation"
+    "hilt-navigation",
+    "hilt-viewmodel-compose"
 ]
 compose = [
     "compose-tooling",
     "compose-activity",
     "wear-compose-foundation",
-    "wear-compose-material"
+    "wear-compose-material",
+    "wear-tooling-preview"
 ]
