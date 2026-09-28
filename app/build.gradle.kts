@@ -31,6 +31,7 @@ android {
 
     kotlin {
         compilerOptions {
+            // TODO Bump to 21?
             jvmTarget = JvmTarget.JVM_17
         }
     }
