@@ -1,25 +1,26 @@
 [versions]
 
 # Common
-kotlin = "2.3.21"
-hilt = "2.59.2"
+kotlin = "2.4.20"
+hilt = "2.60.1"
 
 # Plugins
-kotlin-dsl-plugin = "6.7.1"
-android-plugin = "9.2.0"
-ksp-plugin = "2.3.7"
+# 6.7.6 is expected by Gradle 9.8.0 (newer versions produce Gradle configuration warnings)
+kotlin-dsl-plugin = "6.7.6"
+android-plugin = "9.4.1"
+ksp-plugin = "2.3.12"
 
 # Libraries
-appCompat = "1.7.1"
+appCompat = "1.8.0"
 
-compose-bom = "2026.03.01"
+compose-bom = "2026.09.00"
 compose-activity = "1.13.0"
 
-wear-compose = "1.6.2"
+wear-compose = "1.7.0"
 wear-tooling-preview = "1.0.0"
 
-hilt-navigation-compose = "1.3.0"
-hilt-viewmodel-compose = "1.3.0"
+hilt-navigation-compose = "1.4.0"
+hilt-viewmodel-compose = "1.4.0"
 dataStore-preferences = "1.2.1"
 
 [plugins]
